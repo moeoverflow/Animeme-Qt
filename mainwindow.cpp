@@ -8,15 +8,6 @@ MainWindow::MainWindow(QWidget *parent) :
     player = new LoopPlayer();
     QObject::connect(player, SIGNAL(processedImage(QImage)), this, SLOT(updateLoopPlayerUI(QImage)));
 
-    if (!player->loadVideo("/home/shin/Videos/59adf78ac4c0bc657943222d.mp4"))
-    {
-        QMessageBox msgBox;
-        msgBox.setText("The selected video could not be opened!");
-        msgBox.exec();
-    }
-
-    player->play();
-
     ui->setupUi(this);
 }
 
@@ -61,16 +52,16 @@ void MainWindow::on_openFileButton_clicked()
     }
 }
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_playPauseButton_clicked()
 {
     if (player->isStopped())
     {
         player->play();
-        ui->pushButton_2->setText(tr("Pause"));
+//        ui->playPauseButton->setText(tr("Pause"));
     }
     else
     {
         player->pause();
-        ui->pushButton_2->setText(tr("Play"));
+//        ui->playPauseButton->setText(tr("Play"));
     }
 }

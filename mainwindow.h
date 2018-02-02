@@ -21,7 +21,7 @@ public:
 private slots:
     void updateLoopPlayerUI(QImage img);
     void on_openFileButton_clicked();
-    void on_pushButton_2_clicked();
+    void on_playPauseButton_clicked();
 
 private:
     Ui::MainWindow *ui;
